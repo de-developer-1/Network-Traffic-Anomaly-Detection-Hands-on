@@ -1,0 +1,6 @@
+FROM rocker/shiny:4.3.1
+
+RUN apt-get update && apt-get install -y     libpq-dev     && install2.r --error RPostgres ggplot2 dplyr lubridate
+
+COPY shiny_app/ /srv/shiny-server/
+EXPOSE 3838

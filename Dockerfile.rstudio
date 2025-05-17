@@ -1,0 +1,5 @@
+FROM rocker/tidyverse:4.3.1
+
+RUN apt-get update && apt-get install -y     libpq-dev     && install2.r --error RPostgres isotree lubridate shiny
+
+EXPOSE 8787
